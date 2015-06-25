@@ -15,7 +15,7 @@ class Carotene < Formula
       sbin.mkpath
       mv prefix/"carotene/sbin/carotene", sbin/"carotene"
       inreplace sbin/'carotene' do |s|
-          s.gsub! 'RELEASE_ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"', "RELEASE_ROOT_DIR=\"#{prefix}\"/carotene"
+          s.gsub! 'RELEASE_ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"', "RELEASE_ROOT_DIR=\"#{prefix}/carotene\""
           s.gsub! 'CONFIG_HOME="$RELEASE_ROOT_DIR/etc"', "CONFIG_HOME=\"#{etc}/carotene\""
       end
 
@@ -24,7 +24,7 @@ class Carotene < Formula
       etc.install prefix+'carotene/etc/vm.args' => 'carotene/vm.args' unless File.exists? etc+'carotene/vm.args'
   end
 
-  plist_options :startup => "true", :manual => "carotene start"
+  plist_options :manual => "carotene start"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>
