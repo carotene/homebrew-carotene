@@ -5,7 +5,7 @@
 class Carotene < Formula
   desc "Real Time Server"
   homepage "http://carotene-project.com"
-  url "http://carotene-project.com/carotene-0.2.2.tar.gz"
+  url "http://carotene-project.com/releases/carotene-0.2.2.tar.gz"
   version "0.2.2"
   sha256 "44020312b97c7a3add3f59c99c98d51186c5cc7d5f9a71d7ceca9c1a40e7064d"
 
