@@ -46,9 +46,11 @@ class Carotene < Formula
     EOS
   end
 
-  test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    system "carotene"
+  def caveats
+    s = <<-EOS.undent
+    The default port has been set in #{etc}/carotene/carotene.config to 8081
+    so that carotene can run without sudo.
+    EOS
+    s
   end
 end
